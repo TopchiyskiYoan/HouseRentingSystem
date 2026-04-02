@@ -1,0 +1,403 @@
+[
+  {
+    "id": "h001",
+    "title": "Modern 2-bedroom apartment with a view",
+    "city": "Sofia",
+    "address": "Lozenets, near South Park",
+    "price": 1450,
+    "rentType": "month",
+    "area": 85,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Bright living room, modern kitchen, and a balcony with city views. Quiet building with elevator and great access to metro.",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h002",
+    "title": "Cozy studio in Kapana",
+    "city": "Plovdiv",
+    "address": "Kapana, pedestrian area",
+    "price": 780,
+    "rentType": "month",
+    "area": 42,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "studio",
+    "description": "Compact, stylish studio right in Kapana. Perfect for a single tenant or a couple. Cafes, galleries, and nightlife next door.",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h003",
+    "title": "Family house with yard and parking",
+    "city": "Varna",
+    "address": "Briz, quiet residential street",
+    "price": 2300,
+    "rentType": "month",
+    "area": 165,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "type": "house",
+    "description": "Spacious family home with a sunny yard, 2 bathrooms, and secure parking. Great for long-term rent.",
+    "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h004",
+    "title": "Minimal 1-bedroom near metro",
+    "city": "Sofia",
+    "address": "Mladost 1, 5 min to metro",
+    "price": 980,
+    "rentType": "month",
+    "area": 58,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Clean and practical 1-bedroom apartment with a dedicated workspace and good storage. Recently renovated.",
+    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h005",
+    "title": "Sea-breeze 2-bedroom close to the beach",
+    "city": "Varna",
+    "address": "Chayka, 12 min walk to the sea",
+    "price": 1550,
+    "rentType": "month",
+    "area": 74,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Airy apartment with a large balcony and plenty of light. Ideal for summer and long-term living.",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h006",
+    "title": "Top-floor 3-bedroom with terrace",
+    "city": "Sofia",
+    "address": "Ivan Vazov, near parks and schools",
+    "price": 2600,
+    "rentType": "month",
+    "area": 132,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "type": "penthouse",
+    "description": "Top-floor home with a terrace, great privacy and space. Two bathrooms and a generous kitchen/dining area.",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1560185008-5bf9f2849488?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h007",
+    "title": "Renovated 2-bedroom in the Old Town",
+    "city": "Plovdiv",
+    "address": "Old Town, near museums",
+    "price": 1200,
+    "rentType": "month",
+    "area": 90,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Tasteful renovation with high ceilings and a warm wooden floor. Quiet street, excellent location.",
+    "image": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h008",
+    "title": "Compact studio, excellent transport",
+    "city": "Sofia",
+    "address": "Studentski Grad, near bus lines",
+    "price": 650,
+    "rentType": "month",
+    "area": 33,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "studio",
+    "description": "Simple and affordable studio with everything you need. Great option for students and short commute.",
+    "image": "https://images.unsplash.com/photo-1489171078254-c3365d6e359f?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1489171078254-c3365d6e359f?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h009",
+    "title": "Large 4-bedroom house in Boyana",
+    "city": "Sofia",
+    "address": "Boyana, near Vitosha",
+    "price": 3200,
+    "rentType": "month",
+    "area": 210,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "type": "house",
+    "description": "Premium home with multiple bedrooms, a garden, and excellent privacy. Great for families and remote work.",
+    "image": "https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h010",
+    "title": "Sunny 1-bedroom with balcony",
+    "city": "Plovdiv",
+    "address": "Smirnenski, near Mall Plovdiv",
+    "price": 850,
+    "rentType": "month",
+    "area": 56,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Well-maintained 1-bedroom with a balcony and separate kitchen. Calm area with easy parking.",
+    "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h011",
+    "title": "2-bedroom with dedicated office space",
+    "city": "Sofia",
+    "address": "Oborishte, boutique street",
+    "price": 1750,
+    "rentType": "month",
+    "area": 92,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "type": "apartment",
+    "description": "Ideal for remote work: extra room used as office, quiet building, and excellent neighborhood services.",
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h012",
+    "title": "Modern 3-bedroom near the Sea Garden",
+    "city": "Varna",
+    "address": "Center, near Sea Garden",
+    "price": 2100,
+    "rentType": "month",
+    "area": 118,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "type": "apartment",
+    "description": "Spacious 3-bedroom with modern finishes and walking distance to the Sea Garden. Great family option.",
+    "image": "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h013",
+    "title": "Budget studio, practical and clean",
+    "city": "Plovdiv",
+    "address": "Trakia, near parks",
+    "price": 540,
+    "rentType": "month",
+    "area": 29,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "studio",
+    "description": "Entry-level option with a functional layout. Great transport and supermarkets nearby.",
+    "image": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h014",
+    "title": "Designer 2-bedroom with open kitchen",
+    "city": "Sofia",
+    "address": "Center, near Vitosha Blvd",
+    "price": 2200,
+    "rentType": "month",
+    "area": 96,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Designer interior, open kitchen and dining, and a comfortable living room. Walkable to everything downtown.",
+    "image": "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h015",
+    "title": "Quiet 2-bedroom for long-term rent",
+    "city": "Varna",
+    "address": "Vladislavovo, calm block",
+    "price": 980,
+    "rentType": "month",
+    "area": 71,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Good value 2-bedroom apartment, quiet neighbors and easy access to main roads. Pets negotiable.",
+    "image": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h016",
+    "title": "Spacious 3-bedroom with garage",
+    "city": "Plovdiv",
+    "address": "Kamenitsa 1, near schools",
+    "price": 1600,
+    "rentType": "month",
+    "area": 125,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "type": "apartment",
+    "description": "Large apartment with a garage spot included. Great for families. Separate dining area and plenty of storage.",
+    "image": "https://images.unsplash.com/photo-1560185008-5bf9f2849488?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1560185008-5bf9f2849488?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h017",
+    "title": "Modern townhouse with small garden",
+    "city": "Sofia",
+    "address": "Dragalevtsi, near Vitosha",
+    "price": 2900,
+    "rentType": "month",
+    "area": 175,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "type": "townhouse",
+    "description": "Townhouse on 3 levels with a small garden and great mountain access. Ideal for families who want space.",
+    "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  },
+  {
+    "id": "h018",
+    "title": "City-center 1-bedroom, fully furnished",
+    "city": "Varna",
+    "address": "Center, near Cathedral",
+    "price": 890,
+    "rentType": "month",
+    "area": 48,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Fully furnished 1-bedroom with modern appliances. Great downtown location and easy walking access.",
+    "image": "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h019",
+    "title": "Bright 2-bedroom, great for sharing",
+    "city": "Sofia",
+    "address": "Krasno Selo, near tram lines",
+    "price": 1300,
+    "rentType": "month",
+    "area": 78,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "type": "apartment",
+    "description": "Two separate bedrooms and a comfortable living space. Great option for roommates or a small family.",
+    "image": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": false
+  },
+  {
+    "id": "h020",
+    "title": "Premium 2-bedroom with gym access",
+    "city": "Plovdiv",
+    "address": "Center, new building",
+    "price": 1950,
+    "rentType": "month",
+    "area": 102,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "type": "apartment",
+    "description": "New building with modern common areas and optional gym access. Two bathrooms and a large master bedroom.",
+    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "featured": true
+  }
+]
+
