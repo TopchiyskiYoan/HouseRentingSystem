@@ -20,6 +20,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
             Description = h.Description,
             ImageUrl = h.ImageUrl,
             PricePerMonth = h.PricePerMonth,
+            Kind = h.Kind,
             CategoryId = h.CategoryId
         });
 
@@ -62,6 +63,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
                 : payload.Description,
             ImageUrl = payload.ImageUrl,
             PricePerMonth = payload.PricePerMonth is 0 ? 100m : payload.PricePerMonth,
+            Kind = payload.Kind is 0 ? PropertyKind.TwoBedroom : payload.Kind,
             CategoryId = payload.CategoryId is 0 ? 1 : payload.CategoryId
         };
 
@@ -76,6 +78,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
             Description = entity.Description,
             ImageUrl = entity.ImageUrl,
             PricePerMonth = entity.PricePerMonth,
+            Kind = entity.Kind,
             CategoryId = entity.CategoryId
         };
 

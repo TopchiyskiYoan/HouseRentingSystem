@@ -1,0 +1,452 @@
+[
+  {
+    "title": "Слънчева къща с двор",
+    "address": "София, Бояна, ул. Ясен 4",
+    "description": "Самостоятелна къща с озеленен двор и гараж.",
+    "imageUrl": "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1350,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Модерна къща до парка",
+    "address": "София, Драгалевци, ул. Липа 18",
+    "description": "Тиха улица, ново строителство и просторен двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1771366260867-7e07094579d7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1650,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Семейна къща с веранда",
+    "address": "Пловдив, Кършияка, ул. Родопи 11",
+    "description": "Уютен дом с веранда, подходящ за семейство.",
+    "imageUrl": "https://images.unsplash.com/photo-1753893558297-2092e212cc1c?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 980,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с голям двор",
+    "address": "Варна, Виница, ул. Морска 22",
+    "description": "Голям двор, паркомясто и бърз достъп до града.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402277-1a88c7abc89d?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1250,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Вила с панорамна гледка",
+    "address": "Бургас, Сарафово, ул. Изгрев 6",
+    "description": "Просторна вила с тераса и гледка към морето.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402186-86cf1d31c4df?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1750,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща до центъра",
+    "address": "Русе, Център, ул. Дунав 9",
+    "description": "Реновирана къща близо до магазини и училище.",
+    "imageUrl": "https://images.unsplash.com/photo-1759355787114-09af8ee10783?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 890,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Нова къща с гараж",
+    "address": "Стара Загора, Железник, ул. Бор 14",
+    "description": "Съвременно изпълнение, гараж и двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1770277662704-8fc096960eb2?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1100,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Кокетна къща с градина",
+    "address": "Плевен, Сторгозия, ул. Роза 3",
+    "description": "Поддържана градина и спокоен квартал.",
+    "imageUrl": "https://images.unsplash.com/photo-1768941124452-9a624bb5c8ab?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 760,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Луксозна къща с басейн",
+    "address": "София, Симеоново, ул. Панорама 27",
+    "description": "Висок клас имот с двор и външен басейн.",
+    "imageUrl": "https://images.unsplash.com/photo-1760643444693-5eb2cd767fe7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 2800,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Тиха къща в краен квартал",
+    "address": "Велико Търново, Картала, ул. Пролет 10",
+    "description": "Спокойствие, хубав двор и лесен достъп до центъра.",
+    "imageUrl": "https://images.unsplash.com/photo-1764416166529-99edb0e405a6?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 820,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Двуетажна къща с навес",
+    "address": "Благоевград, Грамада, ул. Планина 8",
+    "description": "Двуетажно разпределение с място за две коли.",
+    "imageUrl": "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 970,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с озеленен вход",
+    "address": "Шумен, Добруджански, ул. Камелия 15",
+    "description": "Уютна фасада и добре поддържан двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1771366260867-7e07094579d7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 790,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Морска къща с двор",
+    "address": "Варна, Галата, ул. Прибой 19",
+    "description": "Близо до морето, голям двор и тиха среда.",
+    "imageUrl": "https://images.unsplash.com/photo-1753893558297-2092e212cc1c?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1320,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с класическа фасада",
+    "address": "Пловдив, Смирненски, ул. Орфей 12",
+    "description": "Класическа визия и просторни помещения.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402277-1a88c7abc89d?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1180,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Просторен дом с ограда",
+    "address": "Сливен, Клуцохор, ул. Стара планина 5",
+    "description": "Самостоятелен имот с добре ограден двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402186-86cf1d31c4df?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 840,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с модерна визия",
+    "address": "София, Малинова долина, ул. Акация 24",
+    "description": "Изчистен дизайн, ново строителство и гараж.",
+    "imageUrl": "https://images.unsplash.com/photo-1759355787114-09af8ee10783?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1860,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Уютна къща с цветна градина",
+    "address": "Добрич, Център, ул. Лале 7",
+    "description": "Спокойна улица и приятна градина отпред.",
+    "imageUrl": "https://images.unsplash.com/photo-1770277662704-8fc096960eb2?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 720,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с каменна облицовка",
+    "address": "Перник, Изток, ул. Рила 16",
+    "description": "Солидна конструкция и подреден двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1768941124452-9a624bb5c8ab?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 860,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Градска къща с паркинг",
+    "address": "София, Манастирски ливади, ул. Витоша 31",
+    "description": "Модерна градска къща с две паркоместа.",
+    "imageUrl": "https://images.unsplash.com/photo-1760643444693-5eb2cd767fe7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1580,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с големи прозорци",
+    "address": "Бургас, Меден рудник, ул. Хоризонт 20",
+    "description": "Светли помещения и двор с място за барбекю.",
+    "imageUrl": "https://images.unsplash.com/photo-1764416166529-99edb0e405a6?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 940,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Самостоятелна къща до училище",
+    "address": "Пазарджик, Запад, ул. Осъм 13",
+    "description": "Подходяща за семейство с деца.",
+    "imageUrl": "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 810,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Вила с бяла фасада",
+    "address": "Созопол, Буджака, ул. Морски бриз 4",
+    "description": "Стилна фасада и приятна морска атмосфера.",
+    "imageUrl": "https://images.unsplash.com/photo-1771366260867-7e07094579d7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 2100,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с покрита веранда",
+    "address": "Габрово, Център, ул. Янтра 9",
+    "description": "Уютен имот с просторна веранда и двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1753893558297-2092e212cc1c?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 780,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща в спокоен квартал",
+    "address": "Хасково, Орфей, ул. Сребърна 6",
+    "description": "Тиха локация и лесен достъп до главен път.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402277-1a88c7abc89d?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 800,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Реновирана къща с двор",
+    "address": "Казанлък, Център, ул. Тракия 17",
+    "description": "След основен ремонт, готова за нанасяне.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402186-86cf1d31c4df?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 920,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с дървени акценти",
+    "address": "Смолян, Нов център, ул. Борика 8",
+    "description": "Комбинация от модерен стил и дървени елементи.",
+    "imageUrl": "https://images.unsplash.com/photo-1759355787114-09af8ee10783?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 870,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Планинска вила с двор",
+    "address": "Самоков, Боровец, ул. Иглика 12",
+    "description": "Чист въздух, природа и просторен двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1770277662704-8fc096960eb2?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1400,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с тиха градина",
+    "address": "Сандански, Център, ул. Пирин 2",
+    "description": "Топъл район, подходящ за целогодишно живеене.",
+    "imageUrl": "https://images.unsplash.com/photo-1768941124452-9a624bb5c8ab?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 960,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Съвременна къща с плосък покрив",
+    "address": "София, Кръстова вада, ул. Череша 29",
+    "description": "Съвременна архитектура и отлична локация.",
+    "imageUrl": "https://images.unsplash.com/photo-1760643444693-5eb2cd767fe7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1950,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с тухлена фасада",
+    "address": "Ямбол, Аврен, ул. Зора 18",
+    "description": "Здрава конструкция и удобен вътрешен двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1764416166529-99edb0e405a6?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 770,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с просторен вход",
+    "address": "Видин, Център, ул. Бдин 14",
+    "description": "Чудесна фасада и място за семейна кола.",
+    "imageUrl": "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 690,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Луксозна къща с алея",
+    "address": "София, Банкя, ул. Минерална 25",
+    "description": "Представителен имот с алея и поддържан двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1771366260867-7e07094579d7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 2600,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с двор и барбекю",
+    "address": "Пловдив, Коматево, ул. Тунджа 5",
+    "description": "Подходяща за семейни събирания и спокойствие.",
+    "imageUrl": "https://images.unsplash.com/photo-1753893558297-2092e212cc1c?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1010,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща близо до гора",
+    "address": "Враца, Сениче, ул. Лесна 7",
+    "description": "Свеж въздух и спокоен район с много зеленина.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402277-1a88c7abc89d?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 830,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Еднофамилна къща с огнище",
+    "address": "Ловеч, Червен бряг, ул. Мадара 10",
+    "description": "Топъл дом с уютен външен кът за отдих.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402186-86cf1d31c4df?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 760,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с висока ограда",
+    "address": "Кюстендил, Запад, ул. Струма 21",
+    "description": "Повече уединение и сигурност за наемателите.",
+    "imageUrl": "https://images.unsplash.com/photo-1759355787114-09af8ee10783?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 850,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Вила с кокетен двор",
+    "address": "Несебър, Черно море, ул. Пясък 3",
+    "description": "Красива външна част и място за отдих.",
+    "imageUrl": "https://images.unsplash.com/photo-1770277662704-8fc096960eb2?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1680,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с широк парцел",
+    "address": "Монтана, Пъстрина, ул. Искър 12",
+    "description": "Голям парцел и простор около къщата.",
+    "imageUrl": "https://images.unsplash.com/photo-1768941124452-9a624bb5c8ab?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 810,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Семеен дом с нова фасада",
+    "address": "Разград, Орел, ул. Хан Аспарух 8",
+    "description": "Освежена фасада и удобна локация.",
+    "imageUrl": "https://images.unsplash.com/photo-1760643444693-5eb2cd767fe7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 740,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с красив фронт",
+    "address": "Търговище, Запад 2, ул. Еделвайс 6",
+    "description": "Приветлива външна част и паркомясто.",
+    "imageUrl": "https://images.unsplash.com/photo-1764416166529-99edb0e405a6?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 730,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Лятна вила под наем",
+    "address": "Балчик, Изгрев, ул. Бяло море 15",
+    "description": "Подходяща за спокоен живот близо до морето.",
+    "imageUrl": "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1430,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с минималистичен дизайн",
+    "address": "София, Панчарево, ул. Езерна 28",
+    "description": "Модерен минимализъм и тишина край града.",
+    "imageUrl": "https://images.unsplash.com/photo-1771366260867-7e07094579d7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1720,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с просторен двор и навес",
+    "address": "Плевен, Дружба, ул. Слънце 11",
+    "description": "Поддържан двор и навес за автомобил.",
+    "imageUrl": "https://images.unsplash.com/photo-1753893558297-2092e212cc1c?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 880,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Елегантна вила с градина",
+    "address": "Варна, Траката, ул. Чайка 30",
+    "description": "Елегантен външен вид и много зеленина.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402277-1a88c7abc89d?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1890,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с двор за домашни любимци",
+    "address": "Русе, Родина, ул. Младост 9",
+    "description": "Широк двор, подходящ за куче и семейство.",
+    "imageUrl": "https://images.unsplash.com/photo-1757439402186-86cf1d31c4df?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 900,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с южен двор",
+    "address": "Стара Загора, Самара 1, ул. Златна 18",
+    "description": "Слънчев двор и функционално разпределение.",
+    "imageUrl": "https://images.unsplash.com/photo-1759355787114-09af8ee10783?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1020,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Голяма къща за семейство",
+    "address": "Пловдив, Беломорски, ул. Хисаря 14",
+    "description": "Повече пространство, две нива и двор.",
+    "imageUrl": "https://images.unsplash.com/photo-1770277662704-8fc096960eb2?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1260,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с приветлива фасада",
+    "address": "Велико Търново, Акация, ул. Крепост 5",
+    "description": "Добра визия отвън и тиха улица.",
+    "imageUrl": "https://images.unsplash.com/photo-1768941124452-9a624bb5c8ab?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 860,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Къща с модерен вход",
+    "address": "София, Горна баня, ул. Минзухар 12",
+    "description": "Ново строителство с отлична визия отвън.",
+    "imageUrl": "https://images.unsplash.com/photo-1760643444693-5eb2cd767fe7?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1540,
+    "kind": 2,
+    "categoryId": 1
+  },
+  {
+    "title": "Вила с просторна фасада",
+    "address": "Поморие, Стария град, ул. Солна 4",
+    "description": "Красива фасада и удобно разположение.",
+    "imageUrl": "https://images.unsplash.com/photo-1764416166529-99edb0e405a6?auto=format&fit=crop&w=1600&q=60",
+    "pricePerMonth": 1600,
+    "kind": 2,
+    "categoryId": 1
+  }
+]
