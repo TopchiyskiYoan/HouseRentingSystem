@@ -4,6 +4,7 @@ using HouseRentingSystemApi.Data.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -14,29 +15,35 @@ public static class ServiceInstaller
 {
     private const string ClientCorsPolicy = "Client";
 
-    public static void AddApiLayer(this IServiceCollection services, IConfiguration configuration)
+    public static void AddApiLayer(this IServiceCollection services, IConfiguration configuration, IHostEnvironment hostEnvironment)
     {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerWithJwtAuth();
-        services.AddClientCors();
+        services.AddClientCors(hostEnvironment);
         services.AddSqlServerContext(configuration);
         services.AddRentalIdentity();
         services.AddJwtAuthentication(configuration);
     }
 
-    private static void AddClientCors(this IServiceCollection services)
+    private static void AddClientCors(this IServiceCollection services, IHostEnvironment hostEnvironment)
     {
         services.AddCors(options =>
         {
             options.AddPolicy(ClientCorsPolicy, policy =>
             {
-                policy
-                    .WithOrigins(
+                policy.AllowAnyHeader().AllowAnyMethod();
+                if (hostEnvironment.IsDevelopment())
+                {
+                    // Allow Vite/React dev server on any host (e.g. http://100.x.x.x:5173 or LAN IP).
+                    policy.SetIsOriginAllowed(_ => true);
+                }
+                else
+                {
+                    policy.WithOrigins(
                         "http://localhost:5173",
-                        "http://localhost:3000")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
+                        "http://localhost:3000");
+                }
             });
         });
     }
@@ -134,8 +141,10 @@ public static class ServiceInstaller
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-
-        app.UseHttpsRedirection();
+        else
+        {
+            app.UseHttpsRedirection();
+        }
         app.UseCors(ClientCorsPolicy);
         app.UseAuthentication();
         app.UseAuthorization();

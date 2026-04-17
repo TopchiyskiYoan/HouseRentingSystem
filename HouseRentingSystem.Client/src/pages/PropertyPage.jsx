@@ -1,25 +1,16 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
-
-const kindLabels = {
-  1: 'Студио',
-  2: '1 спалня',
-  3: '2 спални',
-  4: '3 спални',
-  5: '4+ спални',
-  6: 'Пентхаус',
-  7: 'Дуплекс',
-  8: 'Лофт',
-  9: 'Таунхаус',
-  10: 'Къща',
-  11: 'Вила',
-}
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 export default function PropertyPage() {
   const { id } = useParams()
+  const { userId, token } = useAuth()
+  const navigate = useNavigate()
+
   const [property, setProperty] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -40,10 +31,26 @@ export default function PropertyPage() {
         if (!cancelled) setLoading(false)
       }
     })()
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [id])
+
+  async function handleDelete() {
+    if (!window.confirm('Сигурен ли си, че искаш да изтриеш тази обява?')) return
+    setDeleting(true)
+    try {
+      const res = await fetch(`/api/House/${id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      navigate('/')
+    } catch (e) {
+      alert('Грешка при изтриване: ' + e.message)
+      setDeleting(false)
+    }
+  }
+
+  const isOwner = !!(userId && property?.userId && property.userId === userId)
 
   if (loading) {
     return (
@@ -63,8 +70,7 @@ export default function PropertyPage() {
           <p className="error-text">Грешка: {error ?? 'Обявата не е намерена'}</p>
           <Link to="/" className="back-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5" />
-              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
             </svg>
             Обратно към обявите
           </Link>
@@ -77,8 +83,7 @@ export default function PropertyPage() {
     <div className="container detail-page">
       <Link to="/" className="back-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M19 12H5" />
-          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
         </svg>
         Обратно към обявите
       </Link>
@@ -92,6 +97,25 @@ export default function PropertyPage() {
           </svg>
           {property.address}
         </p>
+
+        {isOwner && (
+          <div className="owner-actions">
+            <Link to={`/property/${id}/edit`} className="btn-edit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="15" height="15">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+              Редактирай
+            </Link>
+            <button
+              className="btn-delete"
+              onClick={handleDelete}
+              disabled={deleting}
+            >
+              {deleting ? 'Изтриване...' : 'Изтрий обявата'}
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="detail-image-section">
@@ -105,71 +129,14 @@ export default function PropertyPage() {
       <div className="detail-content">
         <div className="detail-main">
           <div className="detail-section">
-            <h2 className="detail-section-title">Характеристики</h2>
-            <div className="detail-features-grid">
-              <div className="detail-feature">
-                <div className="detail-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M2 4v16" />
-                    <path d="M2 8h18a2 2 0 012 2v10" />
-                    <path d="M2 17h20" />
-                    <path d="M6 8v9" />
-                  </svg>
-                </div>
-                <div className="detail-feature-text">
-                  <p className="detail-feature-label">Тип имот</p>
-                  <p className="detail-feature-value">{kindLabels[property.kind] ?? 'N/A'}</p>
-                </div>
-              </div>
-              <div className="detail-feature">
-                <div className="detail-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 8h20" />
-                  </svg>
-                </div>
-                <div className="detail-feature-text">
-                  <p className="detail-feature-label">Обзавеждане</p>
-                  <p className="detail-feature-value">Напълно обзаведен</p>
-                </div>
-              </div>
-              <div className="detail-feature">
-                <div className="detail-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                    <path d="M9 22V12h6v10" />
-                  </svg>
-                </div>
-                <div className="detail-feature-text">
-                  <p className="detail-feature-label">Площ</p>
-                  <p className="detail-feature-value">85 кв.м</p>
-                </div>
-              </div>
-              <div className="detail-feature">
-                <div className="detail-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
-                </div>
-                <div className="detail-feature-text">
-                  <p className="detail-feature-label">Наличност</p>
-                  <p className="detail-feature-value">Свободен</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="detail-section">
             <h2 className="detail-section-title">Описание</h2>
             <p className="detail-description">{property.description}</p>
           </div>
-
           <div className="detail-section">
             <h2 className="detail-section-title">Местоположение</h2>
             <p className="detail-description">
-              Имотът се намира на адрес: <strong>{property.address}</strong>. 
-              Районът е с отлична инфраструктура, близо до обществен транспорт, 
+              Имотът се намира на адрес: <strong>{property.address}</strong>.
+              Районът е с отлична инфраструктура, близо до обществен транспорт,
               магазини и училища.
             </p>
           </div>
@@ -183,7 +150,7 @@ export default function PropertyPage() {
               </span>
               <span className="booking-price-period">/месец</span>
             </div>
-            
+
             <form className="booking-form" onSubmit={(e) => e.preventDefault()}>
               <div className="booking-input-group">
                 <label className="booking-label">Дата на нанасяне</label>
@@ -191,20 +158,14 @@ export default function PropertyPage() {
               </div>
               <div className="booking-input-group">
                 <label className="booking-label">Вашият телефон</label>
-                <input 
-                  type="tel" 
-                  className="booking-input" 
-                  placeholder="+359 88 888 8888" 
-                />
+                <input type="tel" className="booking-input" placeholder="+359 88 888 8888" />
               </div>
               <button type="submit" className="booking-btn">
                 Запитване за имота
               </button>
             </form>
 
-            <p className="booking-info">
-              Ще се свържем с вас до 24 часа
-            </p>
+            <p className="booking-info">Ще се свържем с вас до 24 часа</p>
 
             <div className="contact-section">
               <div className="contact-avatar">ИП</div>

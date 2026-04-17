@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using HouseRentingSystemApi.Data.Models;
-using HouseRentingSystemApi.Models.Requests;
+using HouseRentingSystemApi.Models.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -16,49 +16,63 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
     : ControllerBase
 {
     [HttpPost("/login")]
-    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> SignInAsync([FromBody] SignInRequest request)
+    [Produces(typeof(AuthResult))]
+    public async Task<IActionResult> SignInAsync([FromBody] AuthModel model)
     {
         if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+        {
+            var allErrors = ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .ToArray();
 
-        var account = await users.FindByEmailAsync(request.Email);
+            return BadRequest(PopulateResult(400, null, allErrors));
+        }
+
+        var account = await users.FindByEmailAsync(model.Email);
         if (account is null)
-            return Unauthorized(new { message = "Invalid email or password" });
+            return Unauthorized(PopulateResult(400, null, "Invalid email or password"));
 
-        var valid = await users.CheckPasswordAsync(account, request.Password);
+        var valid = await users.CheckPasswordAsync(account, model.Password);
         if (!valid)
-            return Unauthorized(new { message = "Invalid email or password" });
+            return Unauthorized(PopulateResult(400, null, "Invalid email or password"));
 
-        return Ok(IssueToken(account));
+        var token = IssueToken(account);
+        return Ok(PopulateResult(200, token, "User logged in successfully"));
     }
 
     [HttpPost("/register")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status409Conflict)]
-    public async Task<IActionResult> SignUpAsync([FromBody] SignUpRequest request)
+    [Produces(typeof(AuthResult))]
+    public async Task<IActionResult> SignUpAsync([FromBody] AuthModel model)
     {
         if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+        {
+            var allErrors = ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .ToArray();
 
-        var duplicate = await users.FindByEmailAsync(request.Email);
+            return BadRequest(PopulateResult(400, null, allErrors));
+        }
+
+        var duplicate = await users.FindByEmailAsync(model.Email);
         if (duplicate is not null)
-            return Conflict(new { message = "An account with this email already exists." });
+            return BadRequest(PopulateResult(400, null, "User already exists"));
 
         var account = new ApplicationUser
         {
-            Email = request.Email,
-            UserName = request.Username
+            Email = model.Email,
+            UserName = model.Username
         };
 
-        var created = await users.CreateAsync(account, request.Password);
-        if (!created.Succeeded)
-            return BadRequest(new { errors = created.Errors.Select(e => e.Description) });
+        var created = await users.CreateAsync(account, model.Password);
+        if (created.Succeeded)
+            return Ok(PopulateResult(200, null, "User registered successfully"));
 
-        return Ok();
+        return BadRequest(PopulateResult(
+            400,
+            null,
+            created.Errors.Select(e => e.Description).ToArray()));
     }
 
     private string IssueToken(ApplicationUser user)
@@ -87,5 +101,17 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    private AuthResult PopulateResult(int code, string? token = null, params string[] messages)
+    {
+        var result = new AuthResult();
+        result.Code = code;
+        result.Message = string.Join(Environment.NewLine, messages);
+        if (token != null)
+        {
+            result.Token = token;
+        }
+        return result;
     }
 }

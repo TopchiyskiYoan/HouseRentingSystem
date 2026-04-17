@@ -1,18 +1,10 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 
-const kindLabels = {
-  1: 'Студио',
-  2: '1 спалня',
-  3: '2 спални',
-  4: '3 спални',
-  5: '4+ спални',
-  6: 'Пентхаус',
-  7: 'Дуплекс',
-  8: 'Лофт',
-  9: 'Таунхаус',
-  10: 'Къща',
-  11: 'Вила',
+const categoryLabels = {
+  1: 'Единична спалня',
+  2: 'Двойна спалня',
+  3: 'Фамилна',
 }
 
 export default function HomePage() {
@@ -40,65 +32,92 @@ export default function HomePage() {
         if (!cancelled) setLoading(false)
       }
     })()
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [])
 
   const filteredHouses = useMemo(() => {
     if (!searchQuery.trim()) return houses
-    const query = searchQuery.toLowerCase()
+    const q = searchQuery.toLowerCase()
     return houses.filter(
-      (h) =>
-        h.title?.toLowerCase().includes(query) ||
-        h.address?.toLowerCase().includes(query)
+      h => h.title?.toLowerCase().includes(q) || h.address?.toLowerCase().includes(q)
     )
   }, [houses, searchQuery])
 
   return (
     <>
+      {/* ── Hero ─────────────────────────────── */}
       <section className="hero">
-        <div className="container hero-content">
-          <div className="hero-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-            Актуални обяви
+        <div className="container">
+          <div className="hero-inner">
+            <div className="hero-content">
+              <div className="hero-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+                </svg>
+                Актуални обяви
+              </div>
+              <h1 className="hero-title">Намерете перфектния<br />дом под наем</h1>
+              <p className="hero-subtitle">
+                Разгледайте верифицирани обяви за жилища под наем
+                в цялата страна. Бързо, лесно и сигурно.
+              </p>
+
+              {/* Inline search */}
+              <div className="hero-search">
+                <div className="hero-search-inner">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="hero-search-icon">
+                    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <input
+                    type="text"
+                    className="hero-search-input"
+                    placeholder="Търсете по град, квартал или заглавие..."
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative card stack */}
+            <div className="hero-visual" aria-hidden="true">
+              <div className="hero-card hero-card--back" />
+              <div className="hero-card hero-card--mid" />
+              <div className="hero-card hero-card--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="hero-card-icon">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path d="M9 22V12h6v10" />
+                </svg>
+                <span className="hero-card-label">HomeRent</span>
+              </div>
+            </div>
           </div>
-          <h1 className="hero-title">Намерете перфектния дом под наем</h1>
-          <p className="hero-subtitle">
-            Разгледайте стотици верифицирани обяви за жилища под наем в цялата страна. 
-            Бързо, лесно и сигурно.
-          </p>
+
+          {/* Stats row */}
+          <div className="hero-stats">
+            {[
+              { value: '10+', label: 'Активни обяви' },
+              { value: '2+',  label: 'Потребители' },
+              { value: '3',   label: 'Категории' },
+              { value: '100%', label: 'Верифицирани' },
+            ].map(s => (
+              <div className="hero-stat" key={s.label}>
+                <span className="hero-stat-value">{s.value}</span>
+                <span className="hero-stat-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* ── Listings ─────────────────────────── */}
       <section className="listings-section">
         <div className="container">
-          <div className="search-bar">
-            <div className="search-input-wrapper">
-              <svg className="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Търсете по град, квартал или заглавие..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            <div className="results-count">
-              {loading ? (
-                'Зареждане...'
-              ) : (
-                <>
-                  <strong>{filteredHouses.length}</strong> намерени обяви
-                </>
-              )}
-            </div>
+          <div className="listings-header">
+            <h2 className="listings-title">Всички обяви</h2>
+            <p className="listings-count">
+              {loading ? '…' : <><strong>{filteredHouses.length}</strong> намерени</>}
+            </p>
           </div>
 
           {loading ? (
@@ -121,8 +140,8 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="listings-grid">
-              {filteredHouses.map((house) => (
-                <PropertyCard key={house.id} house={house} kindLabels={kindLabels} />
+              {filteredHouses.map(house => (
+                <PropertyCard key={house.id} house={house} />
               ))}
             </div>
           )}
@@ -132,19 +151,15 @@ export default function HomePage() {
   )
 }
 
-function PropertyCard({ house, kindLabels }) {
+function PropertyCard({ house }) {
   return (
     <article className="property-card">
       <Link to={`/property/${house.id}`} className="property-card-link">
         <div className="property-image-wrapper">
-          <img
-            src={house.imageUrl}
-            alt={house.title}
-            className="property-image"
-            loading="lazy"
-          />
+          <img src={house.imageUrl} alt={house.title} className="property-image" loading="lazy" />
           <span className="property-badge">
-            {kindLabels[house.kind] ?? `Тип ${house.kind}`}
+            {Number(house.pricePerMonth).toLocaleString('bg-BG')} лв.
+            <span className="property-badge-period">/мес.</span>
           </span>
         </div>
         <div className="property-body">
@@ -159,27 +174,20 @@ function PropertyCard({ house, kindLabels }) {
           <div className="property-features">
             <span className="property-feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M2 4v16" />
-                <path d="M2 8h18a2 2 0 012 2v10" />
-                <path d="M2 17h20" />
-                <path d="M6 8v9" />
+                <path d="M2 4v16" /><path d="M2 8h18a2 2 0 012 2v10" />
+                <path d="M2 17h20" /><path d="M6 8v9" />
               </svg>
-              {kindLabels[house.kind] ?? 'N/A'}
+              {categoryLabels[house.category] ?? 'N/A'}
             </span>
             <span className="property-feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M2 8h20" />
+                <rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 8h20" />
               </svg>
               Обзаведен
             </span>
           </div>
           <div className="property-footer">
-            <p className="property-price">
-              {Number(house.pricePerMonth).toLocaleString('bg-BG')} лв.
-              <span>/месец</span>
-            </p>
-            <span className="property-cta">Виж детайли</span>
+            <span className="property-cta">Виж детайли →</span>
           </div>
         </div>
       </Link>

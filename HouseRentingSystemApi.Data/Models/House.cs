@@ -32,4 +32,10 @@ public class House
 
     [JsonIgnore]
     public Category? Category { get; set; }
+
+    [JsonIgnore]
+    public ApplicationUser? Owner { get; set; }
+
+    [ForeignKey(nameof(Owner))]
+    public string? UserId { get; set; }
 }
