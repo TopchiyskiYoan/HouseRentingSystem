@@ -1,6 +1,7 @@
 using System.Text;
 using HouseRentingSystemApi.Data;
 using HouseRentingSystemApi.Data.Models;
+using HouseRentingSystemApi.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -145,6 +146,8 @@ public static class ServiceInstaller
         {
             app.UseHttpsRedirection();
         }
+
+        app.UseStopWatchMiddlare();
         app.UseCors(ClientCorsPolicy);
         app.UseAuthentication();
         app.UseAuthorization();
