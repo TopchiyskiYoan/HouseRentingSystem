@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext'
 
 export default function PropertyPage() {
   const { id } = useParams()
-  const { userId, token } = useAuth()
+  const { userId, token, isAgent } = useAuth()
   const navigate = useNavigate()
 
   const [property, setProperty] = useState(null)
@@ -50,7 +50,7 @@ export default function PropertyPage() {
     }
   }
 
-  const isOwner = !!(userId && property?.userId && property.userId === userId)
+  const isOwner = !!(isAgent && userId && property?.userId && property.userId === userId)
 
   if (loading) {
     return (

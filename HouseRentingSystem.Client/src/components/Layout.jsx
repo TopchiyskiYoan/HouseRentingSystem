@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import LoginModal from './LoginModal'
 
 export default function Layout() {
-  const { isAuthenticated, username, logout } = useAuth()
+  const { isAuthenticated, isAgent, username, logout } = useAuth()
   const [showLogin, setShowLogin] = useState(false)
   const navigate = useNavigate()
 
@@ -34,7 +34,7 @@ export default function Layout() {
           <nav className="nav">
             <Link to="/" className="nav-link">Обяви</Link>
 
-            {isAuthenticated && (
+            {isAgent && (
               <>
                 <Link to="/my-listings" className="nav-link">Мои обяви</Link>
                 <Link to="/create" className="nav-link">+ Добави обява</Link>

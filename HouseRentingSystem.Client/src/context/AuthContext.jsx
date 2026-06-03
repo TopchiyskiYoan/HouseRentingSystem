@@ -17,6 +17,12 @@ function isTokenValid(token) {
   return payload.exp * 1000 > Date.now()
 }
 
+function extractRole(payload) {
+  const role = payload?.role
+  if (!role) return null
+  return Array.isArray(role) ? role : [role]
+}
+
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(() => {
     const stored = localStorage.getItem('jwt_token')
@@ -24,9 +30,10 @@ export function AuthProvider({ children }) {
   })
 
   const payload = token ? parseJwt(token) : null
-  // ASP.NET Identity JWT uses ClaimTypes.NameIdentifier → serialized as "nameid"
   const userId = payload?.nameid ?? payload?.sub ?? null
   const username = payload?.unique_name ?? null
+  const roles = extractRole(payload)
+  const isAgent = roles?.includes('Agent') ?? false
   const isAuthenticated = !!token
 
   function login(newToken) {
@@ -40,7 +47,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ token, userId, username, isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ token, userId, username, isAuthenticated, isAgent, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

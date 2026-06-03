@@ -2,6 +2,7 @@ using System.Text;
 using HouseRentingSystemApi.Data;
 using HouseRentingSystemApi.Data.Models;
 using HouseRentingSystemApi.Middlewares;
+using HouseRentingSystemApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ public static class ServiceInstaller
         services.AddSqlServerContext(configuration);
         services.AddRentalIdentity();
         services.AddJwtAuthentication(configuration);
+        services.AddScoped<IAgentService, AgentService>();
     }
 
     private static void AddClientCors(this IServiceCollection services, IHostEnvironment hostEnvironment)

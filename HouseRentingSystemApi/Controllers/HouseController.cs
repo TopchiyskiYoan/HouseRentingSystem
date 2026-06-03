@@ -66,7 +66,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
         });
     }
 
-    [Authorize]
+    [Authorize(Roles = "Agent")]
     [HttpPost("All")]
     [ProducesResponseType(typeof(HouseDetailModel), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -117,7 +117,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
         });
     }
 
-    [Authorize]
+    [Authorize(Roles = "Agent")]
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(HouseDetailModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -171,7 +171,7 @@ public sealed class HouseController(AppDbContext database) : ControllerBase
         });
     }
 
-    [Authorize]
+    [Authorize(Roles = "Agent")]
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]

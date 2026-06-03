@@ -1,5 +1,6 @@
 using HouseRentingSystemApi.Data;
 using HouseRentingSystemApi.Data.Models;
+using HouseRentingSystemApi.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,19 +16,22 @@ public static class DataSeeder
         using var scope = app.Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+        var agentService = scope.ServiceProvider.GetRequiredService<IAgentService>();
 
         await db.Database.MigrateAsync();
 
-        await SeedUsersAsync(userManager);
+        await agentService.EnsureRoleExistsAsync();
+        await SeedUsersAsync(userManager, agentService);
         await SeedCategoriesAsync(db);
         await SeedHousesAsync(db);
     }
 
-    private static async Task SeedUsersAsync(UserManager<ApplicationUser> userManager)
+    private static async Task SeedUsersAsync(UserManager<ApplicationUser> userManager, IAgentService agentService)
     {
-        if (await userManager.FindByEmailAsync("ivan@test.com") is null)
+        var ivan = await userManager.FindByEmailAsync("ivan@test.com");
+        if (ivan is null)
         {
-            var ivan = new ApplicationUser
+            ivan = new ApplicationUser
             {
                 Id = User1Id,
                 UserName = "ivan",
@@ -36,10 +40,13 @@ public static class DataSeeder
             };
             await userManager.CreateAsync(ivan, "Ivan12");
         }
+        if (!await agentService.IsAgentAsync(ivan))
+            await agentService.AssignAgentRoleAsync(ivan);
 
-        if (await userManager.FindByEmailAsync("maria@test.com") is null)
+        var maria = await userManager.FindByEmailAsync("maria@test.com");
+        if (maria is null)
         {
-            var maria = new ApplicationUser
+            maria = new ApplicationUser
             {
                 Id = User2Id,
                 UserName = "maria",
@@ -48,6 +55,8 @@ public static class DataSeeder
             };
             await userManager.CreateAsync(maria, "Maria12");
         }
+        if (!await agentService.IsAgentAsync(maria))
+            await agentService.AssignAgentRoleAsync(maria);
     }
 
     private static async Task SeedCategoriesAsync(AppDbContext db)

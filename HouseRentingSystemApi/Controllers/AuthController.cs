@@ -3,16 +3,19 @@ using System.Security.Claims;
 using System.Text;
 using HouseRentingSystemApi.Data.Models;
 using HouseRentingSystemApi.Models.Auth;
+using HouseRentingSystemApi.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
 namespace HouseRentingSystemApi.Controllers;
 
-/// <summary>JWT issuance and account registration.</summary>
 [ApiController]
 [Route("api/[controller]")]
-public sealed class AuthController(UserManager<ApplicationUser> users, IConfiguration configuration)
+public sealed class AuthController(
+    UserManager<ApplicationUser> users,
+    IConfiguration configuration,
+    IAgentService agentService)
     : ControllerBase
 {
     [HttpPost("/login")]
@@ -37,7 +40,7 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
         if (!valid)
             return Unauthorized(PopulateResult(400, null, "Invalid email or password"));
 
-        var token = IssueToken(account);
+        var token = await IssueTokenAsync(account);
         return Ok(PopulateResult(200, token, "User logged in successfully"));
     }
 
@@ -67,7 +70,12 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
 
         var created = await users.CreateAsync(account, model.Password);
         if (created.Succeeded)
+        {
+            if (model.IsAgent)
+                await agentService.AssignAgentRoleAsync(account);
+
             return Ok(PopulateResult(200, null, "User registered successfully"));
+        }
 
         return BadRequest(PopulateResult(
             400,
@@ -75,10 +83,12 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
             created.Errors.Select(e => e.Description).ToArray()));
     }
 
-    private string IssueToken(ApplicationUser user)
+    private async Task<string> IssueTokenAsync(ApplicationUser user)
     {
         var jwt = configuration.GetSection("Jwt");
         var keyMaterial = jwt["Key"]!;
+
+        var roles = await users.GetRolesAsync(user);
 
         var claims = new List<Claim>
         {
@@ -88,6 +98,9 @@ public sealed class AuthController(UserManager<ApplicationUser> users, IConfigur
             new(ClaimTypes.NameIdentifier, user.Id),
             new(ClaimTypes.Name, user.UserName!)
         };
+
+        foreach (var role in roles)
+            claims.Add(new Claim(ClaimTypes.Role, role));
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyMaterial));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

@@ -13,5 +13,7 @@ namespace HouseRentingSystemApi.Models.Auth
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        public bool IsAgent { get; set; }
     }
 }
